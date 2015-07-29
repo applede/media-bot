@@ -10,7 +10,7 @@ module.exports = {
   cache: true,
   entry: {
     module: path.join(srcPath, 'module.js'),
-    common: ['react', 'react-router', 'alt']
+    common: ['react', 'react-router', 'alt', 'react-bootstrap']
   },
   resolve: {
     root: srcPath,
@@ -27,7 +27,9 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'}
+      {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
+      {test: /\.less$/, loader: 'style!css!less'},
+      {test: /\.(svg|ttf|woff|woff2|eot)$/, loader: 'file'}
     ]
   },
   plugins: [

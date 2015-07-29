@@ -2,6 +2,7 @@ import React from 'react';
 import connectToStores from 'alt/utils/connectToStores';
 import DummyStore from 'stores/dummyStore';
 import DummyActions from 'actions/dummyActions';
+import {Alert} from 'react-bootstrap';
 
 @connectToStores
 class Example extends React.Component {
@@ -25,6 +26,7 @@ class Example extends React.Component {
       <div>
         <input type="text" value={this.state.name} onChange={this.onChange}/>
         <h1>It works: {this.props.name}</h1>
+        <Alert>Hi</Alert>
       </div>
     );
   }

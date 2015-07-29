@@ -1,5 +1,6 @@
 import React from 'react';
 import {RouteHandler, Link} from 'react-router';
+require('../styles/main.less');
 
 class Main extends React.Component {
   render() {
