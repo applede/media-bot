@@ -9,7 +9,7 @@ module.exports = {
   target: 'web',
   cache: true,
   entry: {
-    module: path.join(srcPath, 'module.js'),
+    index: path.join(srcPath, 'index.js'),
     common: ['react', 'react-router', 'alt', 'react-bootstrap']
   },
   resolve: {
@@ -21,7 +21,7 @@ module.exports = {
     path: path.join(__dirname, 'tmp'),
     publicPath: '',
     filename: '[name].js',
-    library: ['Example', '[name]'],
+    library: ['MediaBot', '[name]'],
     pathInfo: true
   },
 
@@ -29,7 +29,7 @@ module.exports = {
     loaders: [
       {test: /\.js?$/, exclude: /node_modules/, loader: 'babel?cacheDirectory'},
       {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.(svg|ttf|woff|woff2|eot)$/, loader: 'file'}
+      {test: /\.(svg|ttf|woff|woff2|eot)$/, loader: 'file?name=[name].[ext]'}
     ]
   },
   plugins: [

@@ -1,4 +1,4 @@
-import alt from 'control';
+import alt from 'altLib';
 import {createStore, bind} from 'alt/utils/decorators';
 import actions from 'actions/dummyActions';
 

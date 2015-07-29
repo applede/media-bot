@@ -1,4 +1,4 @@
-import alt from 'control';
+import alt from 'altLib';
 import {createActions} from 'alt/utils/decorators';
 
 @createActions(alt)
