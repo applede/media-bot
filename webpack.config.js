@@ -10,7 +10,7 @@ module.exports = {
   cache: true,
   entry: {
     index: path.join(srcPath, 'index.js'),
-    common: ['react', 'react-router', 'alt', 'react-bootstrap']
+    common: ['react', 'react-router', 'alt', 'react-bootstrap', 'react-router-bootstrap']
   },
   resolve: {
     root: srcPath,
