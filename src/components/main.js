@@ -8,7 +8,7 @@ class Main extends React.Component {
   render() {
     return (
       <div>
-        <Navbar brand={<a href="#">미디어봇</a>}>
+        <Navbar brand={<a href="#">미디어 봇</a>}>
           <Nav>
             <NavItemLink to="movie">
               영화
