@@ -1,16 +1,10 @@
-import React from 'react';
-import {Route} from 'react-router';
+import React from 'react'
+import { DefaultRoute, Route } from 'react-router'
+import App from './components/App'
+import Login from './components/Login'
 
-import Main from 'components/main';
-import Example from 'components/example';
-
-const routes = (
-  <Route handler={Main}>
-    <Route name='movie' handler={Example}/>
-    <Route name='series' handler={Example}/>
-    <Route name='porn' handler={Example}/>
-    <Route name='etc' handler={Example}/>
+export default (
+  <Route name="app" component={App} path="/">
+      <Route component={Login} path="login" />
   </Route>
-);
-
-export default routes;
+)

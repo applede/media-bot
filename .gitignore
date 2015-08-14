@@ -47,3 +47,6 @@ tmp/
 .hg
 .svn
 .CVS
+
+build/
+dist/

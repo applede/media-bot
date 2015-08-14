@@ -1,21 +1,27 @@
-var webpack = require('webpack');
 var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var merge = require('merge-util');
-var prodCfg = require('./webpack.prod.config');
 
-module.exports = merge(prodCfg, {
+var outDirectory = (process.env.NODE_ENV === 'production') ?
+  'dist' :
+  'build';
+
+module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server',
-    "./src/index.js"
+    './src/index.js'
   ],
+  resolve: {
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.js', '.jsx']
+  },
+  output: {
+    path: path.join(__dirname, outDirectory),
+    filename: 'bundle.js'
+  },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel']
+        loaders: ['babel']
       },
       {
         test: /\.css$/,
@@ -42,18 +48,5 @@ module.exports = merge(prodCfg, {
         loader: "file-loader"
       }
     ]
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ],
-  devtool: "eval",
-  devServer: {
-    hot: true,
-    port: 3000,
-    contentBase: './build'
   }
-});
+};
