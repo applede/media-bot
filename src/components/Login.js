@@ -1,27 +1,27 @@
-import React from 'react'
-import { Input, ButtonInput, Panel } from 'react-bootstrap'
+import React from 'react';
+import { Input, ButtonInput, Panel } from 'react-bootstrap';
 
 let Login = React.createClass({
   getInitialState() {
     return {
       disabled: true,
       style: null
-    }
+    };
   },
   validationState() {
-    let length = this.refs.input.getValue().length
-    let style = 'danger'
+    let length = this.refs.input.getValue().length;
+    let style = 'danger';
 
-    if (length > 10) { style = 'success' }
-    else if (length > 5) { style = 'warning' }
+    if (length > 10) { style = 'success'; }
+    else if (length > 5) { style = 'warning'; }
 
-    let disabled = style !== 'success'
+    let disabled = style !== 'success';
 
-    return { style, disabled }
+    return { style, disabled };
   },
 
   handleChange() {
-    this.setState( this.validationState() )
+    this.setState( this.validationState() );
   },
   render() {
     return (
@@ -32,8 +32,8 @@ let Login = React.createClass({
           <ButtonInput type="submit" value="Login" bsStyle={this.state.style} bsSize="large" disabled={this.state.disabled} />
         </form>
       </div>
-    )
+    );
   }
-})
+});
 
-export default Login
+export default Login;
