@@ -1,14 +1,13 @@
 import React from 'react';
 import { Input, ButtonInput, Panel } from 'react-bootstrap';
 
-let Login = React.createClass({
-  getInitialState() {
-    return {
-      disabled: true,
-      style: null
-    };
-  },
-  validationState() {
+export default class Login extends React.Component {
+  state = {
+    disabled: true,
+    style: null
+  }
+
+  validationState = () => {
     let length = this.refs.input.getValue().length;
     let style = 'danger';
 
@@ -18,11 +17,12 @@ let Login = React.createClass({
     let disabled = style !== 'success';
 
     return { style, disabled };
-  },
+  }
 
-  handleChange() {
+  handleChange = () => {
     this.setState( this.validationState() );
-  },
+  }
+
   render() {
     return (
       <div className='loginPanel'>
@@ -34,6 +34,4 @@ let Login = React.createClass({
       </div>
     );
   }
-});
-
-export default Login;
+}

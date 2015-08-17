@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var merge = require('merge-util');
+var merge = require('object-assign');
 var prodCfg = require('./webpack.prod.config');
 
 module.exports = merge(prodCfg, {
