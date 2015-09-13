@@ -10,7 +10,7 @@ config :server, Server.Endpoint,
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "BlQSE5DM9OX/oY2ssl9Ag0ecXIvJ1QTeN0jvrzV4mbCK/muWrNknc3+yopnsoIiy",
-  render_errors: [default_format: "html"],
+  render_errors: [accepts: ["html"]],
   pubsub: [name: Server.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
