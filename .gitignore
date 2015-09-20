@@ -1,52 +1,19 @@
-# Mac
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# App artifacts
+/_build
+/db
+/deps
+/*.ez
 
-# Misc
-*~
-*.bak
-*.log
-*.tmp
-*.diff
-*.err
-*.orig
-*.rej
-*.swo
-*.swp
-*.zip
-*.tar
+# Generate on crash by the VM
+erl_crash.dump
 
-# IDE
-.idea/
-*.ipr
-*.iws
-*.sublime-project
-*.sublime-workspace
-*.komodoproject
-.komodotools
-*.suo
-*.user
-*.sln
-.cache
-.project
-.settings
-.tmproj
-*.esproj
-nbproject
+# The config/prod.secret.exs file by default contains sensitive
+# data and you should not commit it into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets file as long as you replace its contents by environment
+# variables.
+/config/prod.secret.exs
 
-# Build artifacts
-node_modules/
-tmp/
-*.map
-
-# DVCS
-.hg
-.svn
-.CVS
-
-build/
-dist/
+/node_modules
+/priv/static/js/bundle.js

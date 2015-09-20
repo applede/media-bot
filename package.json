@@ -1,38 +1,21 @@
 {
   "name": "media-bot",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "media bot",
-  "main": "src/index.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "dev": "webpack-dev-server --progress --color",
-    "build": "NODE_ENV=production webpack --progress --color -p --config webpack.prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jake Song",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
-    "babel-core": "^5.8.22",
-    "babel-eslint": "^4.0.5",
     "babel-loader": "^5.3.2",
-    "bootstrap": "^3.3.5",
-    "css-loader": "^0.15.6",
-    "eslint": "^1.1.0",
-    "eslint-plugin-react": "^3.2.2",
-    "file-loader": "^0.8.4",
-    "html-webpack-plugin": "^1.6.1",
-    "object-assign": "^3.0.0",
-    "react": "^0.13.3",
-    "react-bootstrap": "^0.24.4",
-    "react-hot-loader": "^1.2.8",
-    "react-redux": "^0.9.0",
-    "react-router": "^1.0.0-beta3",
-    "react-router-1-bootstrap": "^0.18.1",
-    "redux": "^1.0.1",
-    "redux-devtools": "^1.0.2",
-    "style-loader": "^0.12.3",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack": "^1.12.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^0.13.3"
+  }
 }
