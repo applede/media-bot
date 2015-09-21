@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
+import { Panel, Input, ButtonInput, Row, Col } from 'react-bootstrap';
+
+const panelStyles = { maxWidth: 400, margin: '0 auto' };
 
 export class Login extends Component {
   render() {
     var errors = <div></div>;
     return (
-      <div>
+      <Panel style={panelStyles}>
         {errors}
 
-        <div className="row">
-          <form className="form-signin" onSubmit={this._onSubmit}>
-            <h2 className="form-signin-heading">Please log in below</h2>
-
-            <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input ref="email" type="email" id="inputEmail" className="form-control" placeholder="Email address" required autofocus />
-
-            <label htmlFor="inputPassword" className="sr-only">Password</label>
-            <input ref="password" type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-
-            <button className="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-
-            <div className="row">
-            {
-              // <Link to="forgot_password">Forgot password</Link>-->
-            }
-            </div>
-
+        <div>
+          <form onSubmit={this._onSubmit}>
+            <h2></h2>
+            <Input ref="username" type="text" placeholder="Username" required autofocus />
+            <Input ref="password" type="password" placeholder="Password" required />
+            <Row>
+              <Col xs={4} xsOffset={4}>
+                <ButtonInput type="submit" value="Log in" bsStyle='primary' block />
+              </Col>
+            </Row>
           </form>
         </div>
-      </div>
+      </Panel>
     );
   }
 }
