@@ -12,9 +12,11 @@
   </head>
 
   <body>
-
-      <%= @inner %>
-
-    <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
+    <%= @inner %>
+    <%= if Mix.env == :dev do %>
+      <script src='http://localhost:4001/bundle.js'></script>
+    <% else %>
+      <script src="<%= static_path(@conn, "/js/bundle.js") %>"></script>
+    <% end %>
   </body>
 </html>
