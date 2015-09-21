@@ -1,5 +1,10 @@
 defmodule MediaBot.Router do
   use MediaBot.Web, :router
+  require PhoenixTokenAuth
+
+  pipeline :authenticated do
+    plug PhoenixTokenAuth.Plug
+  end
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -17,6 +22,19 @@ defmodule MediaBot.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/api" do
+    pipe_through :api
+
+    PhoenixTokenAuth.mount
+  end
+
+  scope "/api" do
+    pipe_through :authenticated
+    pipe_through :api
+
+    resources "movies", MoviesController
   end
 
   # Other scopes may use custom stacks.
